@@ -1,0 +1,64 @@
+<div class="container text-center">
+  <br> <br>
+  <h1>{{title}}</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="search-book">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchBook" autocomplete="off" placeholder=" Search for a book by name or author">
+      <Button class="btn btn-success" [disabled] = "cartStatus()" routerLink = "/issueBook">Issue Books</Button>
+    </div>
+    <br>
+    <table class="inlineTable">
+      <thead>
+      <tr>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of leftBookShelf | filter:searchBook">
+        <td style="width: 350px; height: 350px;"><img src= '{{ book.imagePath }}'  style="height: 300px;">
+          
+      
+            <label><input type = "checkbox" (change)="pushToCart(book)"><b> {{book.name}} by {{book.author}} </b></label>
+            <footer><span class ="label label-success">Available</span></footer>
+       
+          </td> 
+      </tr>
+      </tbody>
+    </table>
+
+    <table class="inlineTable">
+      <thead>
+      <tr>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of middleBookShelf | filter:searchBook">
+        <td style="width: 350px; height: 350px;"><img src= '{{ book.imagePath }}'  style="height: 300px;">
+          <label><input type = "checkbox" (change)="pushToCart(book)"><b> {{book.name}} by {{book.author}} </b></label>
+            <footer><span class ="label label-success">Available</span></footer>
+        </td> 
+      </tr>
+      </tbody>
+    </table>
+
+    <table class="inlineTable">
+      <thead>
+      <tr>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of rightBookShelf | filter:searchTerm">
+        <td style="width: 350px; height: 350px;"><img src= '{{ book.imagePath }}'  style="height: 300px;">
+          <label><input type = "checkbox" (change)="pushToCart(book)"><b> {{book.name}} by {{book.author}} </b></label>
+            <footer><span class ="label label-success">Available</span></footer>
+        </td> 
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

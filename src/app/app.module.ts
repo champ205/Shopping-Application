@@ -3,7 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavbarModule } from './navbar/navbar.module';
-import { BookModule } from './book/book.module';
+import { HomeModule } from './home/home.module';
+import {RouterModule} from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { IssueBookModule } from './issue-book/issue-book.module';
+import { IssueBookComponent } from './issue-book/issue-book/issue-book.component';
 
 
 @NgModule({
@@ -12,8 +16,14 @@ import { BookModule } from './book/book.module';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {path: 'home', component : HomeComponent},
+      {path: '', redirectTo:'home', pathMatch:'full'},
+      {path:'**', redirectTo:'home', pathMatch:'full'}
+    ]),
     NavbarModule,
-    BookModule
+    HomeModule,
+    IssueBookModule
   ],
   providers: [],
   bootstrap: [AppComponent]

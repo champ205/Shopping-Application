@@ -1,0 +1,37 @@
+
+<div class="container text-center">
+    <h1><span class="label other">Here's the list of the books you can issue !</span></h1>
+  </div>
+
+<br> <br>
+<div class="container">
+    <div class="row">
+        <table class="inlineTable">
+            <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let book of booksIssuedToUser">
+              <td style="width: 350px; height: 350px;"><img src= '{{ book.imagePath }}'  style="height: 300px;"></td>
+                <td><b>Book Name</b>
+                <br>
+                <b>Author</b> 
+                <br>
+                <b>Available From</b>
+                </td>
+                <td><b>: {{book.name}}</b>
+                <br>
+                <b>: {{book.author}}</b>
+                <br>
+                <b>:</b>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

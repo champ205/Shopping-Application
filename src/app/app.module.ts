@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {IssueBookComponent} from './book/issue-book/issue-book.component'; 
 import {SignupComponent} from './user/signup/signup.component';
+import {AvailableBooksComponent} from './book/available-books/available-books.component';
+import {IssuedBooksComponent} from './book/issued-books/issued-books.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import {SignupComponent} from './user/signup/signup.component';
     HomeComponent,
     NavbarComponent,
     IssueBookComponent,
-    SignupComponent
+    SignupComponent,
+    IssuedBooksComponent,
+    AvailableBooksComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

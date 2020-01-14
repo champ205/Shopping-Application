@@ -1,1 +1,38 @@
-<p>available-books works!</p>
+<div class="container text-center">
+    <br> <br>
+<h1>{{title}}</h1>
+    <hr>
+  </div>
+
+<br> <br>
+<div class="container">
+    <div class="row">
+        <table class="inlineTable">
+            <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let book of availableBooks">
+              <td style="width: 350px; height: 350px;"><img src= '{{ book.imagePath }}'  style="height: 300px;"></td>
+                <td><b>Book Name</b>
+                <br>
+                <b>Author</b> 
+                </td>
+                <td><b>: {{book.name}}</b>
+                <br>
+                <b>: {{book.author}}</b>
+                </td>
+             <td>
+                <button class="btn btn-primary" routerLink = "/issueBook" (click) = "updateCart(book)">Issue</button>
+              </td> 
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
